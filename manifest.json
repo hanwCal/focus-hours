@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Yumi Focus Hours",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Make room for focused work. Block distracting websites on a schedule, with exceptions and PIN-protected settings.",
   "minimum_chrome_version": "120",
   "permissions": ["storage", "alarms", "tabs", "declarativeNetRequestWithHostAccess"],

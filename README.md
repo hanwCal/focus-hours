@@ -70,4 +70,4 @@ Implementation references: Chrome’s [declarative network request API](https://
 
 ## Yumi design assets
 
-The UI uses the Yumi Light palette and component conventions from `yumi-core/ui/src/styles/tokens.css`, with the original Yumi head logo and toolbar icon from the existing `yumi-blur` extension. IBM Plex Sans is bundled locally in weights 400, 500, 600, and 700; its SIL Open Font License is included in `assets/fonts/OFL.txt`. There are no runtime font or logo downloads.
+The UI uses the Yumi Light palette and component conventions from `yumi-core/ui/src/styles/tokens.css`, with the original Yumi head logo from the existing `yumi-blur` extension. The toolbar icon adds a clock badge to distinguish Focus Hours from PHI Filter. IBM Plex Sans is bundled locally in weights 400, 500, 600, and 700; its SIL Open Font License is included in `assets/fonts/OFL.txt`. There are no runtime font or logo downloads.

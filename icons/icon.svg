@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
 <rect width="128" height="128" rx="26" fill="#0f766e"/>
-<svg x="18" y="18" width="92" height="92" viewBox="0 0 1133.9 1133.9">
+<svg x="10" y="12" width="88" height="88" viewBox="0 0 1133.9 1133.9">
 <style type="text/css">
 	.st0{fill:#FFFFFF;}
 </style>
@@ -52,4 +52,8 @@ c4 -81 -36 -286 -99 -505 -78 -277 -390 -1495 -387 -1515 3 -19 12 -20 152
 289 -25 -1 -76 -9 -112 -18z"/>
 </g>
 </svg>
+<g id="clock-badge">
+  <circle cx="98" cy="98" r="23" fill="#ffffff" stroke="#0f766e" stroke-width="6"/>
+  <path d="M98 86v13l8 5" fill="none" stroke="#0f766e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
 </svg>

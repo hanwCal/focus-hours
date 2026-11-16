@@ -16,7 +16,6 @@ function updateOverview() {
   exceptions.replaceChildren();
   for (const domain of state.settings.exceptions) exceptions.append(element('span', 'domain-chip', domain));
   if (!state.settings.exceptions.length) exceptions.append(element('span', 'muted', 'No exceptions'));
-  $('.music-note').hidden = !state.settings.exceptions.some(domain => domain === 'music.youtube.com' || 'music.youtube.com'.endsWith(`.${domain}`));
   if (state.lastError) setMessage($('#global-message'), state.lastError, true);
   else if ($('#global-message').classList.contains('error-message')) setMessage($('#global-message'));
 }

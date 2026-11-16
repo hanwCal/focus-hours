@@ -44,9 +44,9 @@
                 <p class="small-note">Times follow your computer’s local time. If an end time is earlier than its start, the schedule continues into the next day.</p>
               </section>
               <section class="card exception-card">
-                <span class="section-number">Exceptions</span><h2>Always allowed</h2>
+                <h2>Exceptions</h2>
                 <p class="muted">These websites and their subdomains stay available, even during focus hours.</p>
-                <label class="field"><span>Exceptions <span class="optional-label">one domain per line</span></span><textarea id="exceptions" rows="3" spellcheck="false" autocapitalize="none" placeholder="music.youtube.com"></textarea></label>
+                <label class="field"><span>Allowed websites <span class="optional-label">one domain per line</span></span><textarea id="exceptions" rows="3" spellcheck="false" autocapitalize="none" placeholder="allowed.example.com"></textarea></label>
               </section>
               <div class="save-bar"><p id="settings-message" class="message" role="status" aria-live="polite"></p><button id="save-settings" class="button primary" type="submit">Save settings <span aria-hidden="true">↗</span></button></div>
             </form>
@@ -55,7 +55,6 @@
         </div>
         <aside class="settings-sidebar">
           <section class="card overview-card"><div class="section-heading"><h2>Your saved routine</h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4m8-4v4M4 10h16M8 14h3m-3 3h7"/></svg></div><div id="schedule-summary"><p class="muted">Loading schedule…</p></div><div class="allowed-summary"><span class="eyebrow">Always allowed</span><div id="exception-summary" class="domain-list"></div></div></section>
-          <section class="music-note"><span class="music-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18V5l11-2v13M9 8l11-2"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="17" cy="16" rx="3" ry="2"/></svg></span><div><h3>Keep your soundtrack.</h3><p>YouTube Music stays open.<br>The rabbit holes can wait.</p><a href="https://music.youtube.com/" target="_blank" rel="noopener noreferrer">Open YouTube Music <span aria-hidden="true">↗</span></a></div></section>
           <section id="session-panel" class="session-panel" hidden><p id="session-expiry"></p><button id="lock-settings" class="button text-button" type="button">Lock settings now <span aria-hidden="true">↗</span></button></section>
         </aside>
       </div>

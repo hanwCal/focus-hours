@@ -83,8 +83,3 @@ export function safeOriginalUrl(hash = location.hash) {
     return null;
   }
 }
-
-export function musicIsAllowed(state) {
-  const matches = domain => 'music.youtube.com' === domain || 'music.youtube.com'.endsWith(`.${domain}`);
-  return !state.settings.enabled || state.settings.exceptions.some(matches) || !state.activeRules.some(rule => rule.domains.some(matches));
-}

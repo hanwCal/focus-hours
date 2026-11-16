@@ -1,4 +1,4 @@
-import { request, safeOriginalUrl, nextChange, setMessage, musicIsAllowed } from './ui.js';
+import { request, safeOriginalUrl, nextChange, setMessage } from './ui.js';
 
 const $ = selector => document.querySelector(selector);
 const originalUrl = safeOriginalUrl();
@@ -15,7 +15,6 @@ async function check(continueIfAllowed = false) {
     const { state } = result;
     setMessage($('#blocked-message'));
     $('#next-change').textContent = nextChange(state);
-    $('#music-link').hidden = !musicIsAllowed(state);
     if (originalUrl) {
       $('#blocked-domain').textContent = originalUrl.hostname;
       if (!result.blocked) {

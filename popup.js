@@ -1,4 +1,4 @@
-import { request, paintStatus, renderSummary, setMessage, musicIsAllowed } from './ui.js';
+import { request, paintStatus, renderSummary, setMessage } from './ui.js';
 
 const $ = selector => document.querySelector(selector);
 async function refresh() {
@@ -9,7 +9,6 @@ async function refresh() {
     renderSummary($('#popup-summary'), state.settings, state.activeRules);
     $('#open-settings').firstChild.textContent = state.pinConfigured ? 'Unlock settings ' : 'Set up your PIN ';
     $('#popup-footer').textContent = state.pinConfigured ? 'Your schedule works while settings are locked.' : 'Your default routine is ready. Choose a PIN to protect it.';
-    $('#music-link').hidden = !musicIsAllowed(state);
     setMessage($('#popup-message'), state.lastError || '', Boolean(state.lastError));
   } catch (error) { setMessage($('#popup-message'), error.message, true); }
 }

@@ -98,10 +98,6 @@ textarea { resize: vertical; min-height: 78px; line-height: 1.6; font-family: ui
 .active-tag { color: var(--green); background: var(--mint); }
 .allowed-summary { margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--line); }
 .allowed-summary .eyebrow { font-size: 11px; letter-spacing: 1.2px; }
-.music-note { display: flex; gap: 12px; padding: 16px; margin-bottom: 20px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
-.music-icon { background: var(--mint); color: var(--green); border-radius: 8px; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.music-note p { color: var(--muted); font-size: 12px; line-height: 1.7; margin-top: 5px; }
-.music-note a { display: inline-block; margin-top: 11px; font-size: 11px; font-weight: 600; }
 .page-footer { display: flex; justify-content: space-between; gap: 20px; margin-top: 50px; padding: 22px 0 30px; border-top: 1px solid var(--line); color: #64748b; font-size: 11px; line-height: 1.6; }
 .page-footer span:last-child { max-width: 390px; text-align: right; }
 .switch-control { display: flex; align-items: center; gap: 7px; position: relative; flex-shrink: 0; font-size: 11px; color: var(--muted); cursor: pointer; }
@@ -155,8 +151,6 @@ input[type="checkbox"] { accent-color: var(--green); }
 .popup-intro > p { margin-top: 11px; font-size: 11px; }
 .popup-summary { border-top: 1px solid var(--line); max-height: 280px; overflow-y: auto; }
 .popup-summary .schedule-summary { margin-top: 19px; }
-.popup-music { display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--line); border-radius: 8px; background: var(--card); padding: 12px; font-size: 12px; text-decoration: none; margin-bottom: 14px; }
-.popup-music > span > span { font-size: 17px; margin-right: 8px; }
 .popup-footer { margin-top: 13px; color: var(--muted); text-align: center; font-size: 11px; line-height: 1.6; }
 .full-width { width: 100%; justify-content: space-between; }
 .blocked-page { min-height: 100vh; display: flex; flex-direction: column; }
@@ -214,9 +208,7 @@ input[type="checkbox"] { accent-color: var(--green); }
 .local-label { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 500; color: var(--muted); border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 3px 8px; white-space: nowrap; }
 .local-label > span { width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
 .section-icon { width: 19px; height: 19px; color: var(--green); }
-.section-icon, .music-icon svg, .popup-music svg { stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
-.music-icon svg, .popup-music svg { width: 19px; height: 19px; }
-.popup-music > span:first-child { display: inline-flex; align-items: center; gap: 9px; }
+.section-icon { stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 .popup-routine-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-bottom: 14px; }
 .popup-header .wordmark { font-size: 16px; }
 .popup-header .brand-logo { width: 36px; height: 36px; }

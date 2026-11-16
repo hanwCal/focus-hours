@@ -23,7 +23,7 @@ Use Chrome 120 or later. The default schedule starts working as soon as the exte
 | Always allowed | `music.youtube.com`, including its subdomains |
 | Time zone | Your computer’s current local time zone |
 
-For example, `www.youtube.com` and `m.youtube.com` are blocked during work hours. `music.youtube.com` stays accessible. Exceptions override every schedule. Blocking is limited to top-level website visits so shared media and API requests used by YouTube Music remain available.
+Domains include their subdomains, and exceptions override every schedule. Blocking is limited to top-level website visits so shared media and API requests used by allowed sites remain available.
 
 ## Settings
 
@@ -64,7 +64,7 @@ npx playwright install chromium
 npm run test:browser
 ```
 
-This checks actual extension loading, PIN setup/change, live tab enforcement, Chrome's rule matching, Music exceptions, responsive pages, and persistence after restart. Screenshots and a report are written to `test-results/`. Set `BROWSER_EXECUTABLE` to use an existing compatible Chrome for Testing binary.
+This checks actual extension loading, PIN setup/change, live tab enforcement, Chrome's rule matching, domain exceptions, responsive pages, and persistence after restart. Screenshots and a report are written to `test-results/`. Set `BROWSER_EXECUTABLE` to use an existing compatible Chrome for Testing binary.
 
 Implementation references: Chrome’s [declarative network request API](https://developer.chrome.com/docs/extensions/reference/api/declarativeNetRequest), [alarm lifecycle](https://developer.chrome.com/docs/extensions/reference/api/alarms), and [extension storage](https://developer.chrome.com/docs/extensions/reference/api/storage).
 

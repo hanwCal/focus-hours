@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yumi Focus Hours · Settings</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="options.js"></script>
+</head>
+<body class="options-page">
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="options.html" aria-label="Yumi Focus Hours settings"><img class="brand-logo" src="assets/yumi-logo-head-solid.svg" alt="" width="42" height="42"><span class="wordmark">Yumi Focus Hours<small>Scheduled website blocking</small></span></a>
+      <span class="local-label"><span aria-hidden="true"></span>Local only</span>
+    </header>
+    <main>
+      <section class="page-intro">
+        <div><p class="eyebrow">Focus settings</p><h1>Your focus, on schedule.</h1><p class="intro-copy">Set your boundaries. Keep the good parts of the internet.</p></div>
+        <div class="intro-status"><span id="status-badge" class="status-pill">Checking schedule…</span><p id="next-change"></p><p id="timezone" class="timezone"></p></div>
+      </section>
+      <p id="global-message" class="message" role="status" aria-live="polite"></p>
+      <div class="settings-layout">
+        <div class="settings-main">
+          <section id="loading-panel" class="card"><p class="muted">Loading your settings…</p></section>
+          <section id="auth-panel" class="card auth-card" hidden>
+            <span class="section-number" aria-hidden="true">Settings access</span>
+            <h2 id="auth-title">Unlock your settings</h2>
+            <p id="auth-description" class="muted">Enter your four-digit PIN to change schedules and exceptions.</p>
+            <form id="auth-form">
+              <label class="field pin-field"><span id="pin-label">Four-digit PIN</span><input id="auth-pin" name="pin" type="password" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" required autocomplete="current-password" placeholder="••••" aria-describedby="auth-message"></label>
+              <label id="confirm-pin-field" class="field pin-field" hidden><span>Confirm PIN</span><input id="confirm-pin" name="confirmPin" type="password" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" autocomplete="new-password" placeholder="••••"></label>
+              <p id="auth-message" class="message" role="status" aria-live="polite"></p>
+              <button id="auth-submit" class="button primary" type="submit">Unlock settings <span aria-hidden="true">↗</span></button>
+            </form>
+            <p class="small-note">The schedule works while settings are locked. Unlocking does not pause blocking.</p>
+          </section>
+          <div id="editor-panel" hidden>
+            <form id="settings-form">
+              <section class="card">
+                <div class="section-heading"><div><span class="section-number">Schedules</span><h2>Protect your focus time</h2></div><label class="switch-control"><input id="blocking-enabled" type="checkbox"><span class="switch" aria-hidden="true"></span><span id="blocking-label">Blocking on</span></label></div>
+                <p class="muted">Choose websites, days, and hours. Domain rules also include their subdomains.</p>
+                <div id="rules-list" class="rules-list"></div>
+                <button id="add-schedule" class="button secondary" type="button"><span aria-hidden="true">＋</span> Add schedule</button>
+                <p class="small-note">Times follow your computer’s local time. If an end time is earlier than its start, the schedule continues into the next day.</p>
+              </section>
+              <section class="card exception-card">
+                <span class="section-number">Exceptions</span><h2>Always allowed</h2>
+                <p class="muted">These websites and their subdomains stay available, even during focus hours.</p>
+                <label class="field"><span>Exceptions <span class="optional-label">one domain per line</span></span><textarea id="exceptions" rows="3" spellcheck="false" autocapitalize="none" placeholder="music.youtube.com"></textarea></label>
+              </section>
+              <div class="save-bar"><p id="settings-message" class="message" role="status" aria-live="polite"></p><button id="save-settings" class="button primary" type="submit">Save settings <span aria-hidden="true">↗</span></button></div>
+            </form>
+            <details class="card pin-change-card"><summary>Change your PIN <span aria-hidden="true">＋</span></summary><form id="change-pin-form"><div class="pin-change-fields"><label class="field"><span>Current PIN</span><input id="current-pin" type="password" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" required autocomplete="current-password"></label><label class="field"><span>New PIN</span><input id="new-pin" type="password" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" required autocomplete="new-password"></label><label class="field"><span>Confirm new PIN</span><input id="new-pin-confirm" type="password" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" required autocomplete="new-password"></label></div><p id="change-pin-message" class="message" role="status" aria-live="polite"></p><button class="button secondary" type="submit">Update PIN</button></form></details>
+          </div>
+        </div>
+        <aside class="settings-sidebar">
+          <section class="card overview-card"><div class="section-heading"><h2>Your saved routine</h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4m8-4v4M4 10h16M8 14h3m-3 3h7"/></svg></div><div id="schedule-summary"><p class="muted">Loading schedule…</p></div><div class="allowed-summary"><span class="eyebrow">Always allowed</span><div id="exception-summary" class="domain-list"></div></div></section>
+          <section class="music-note"><span class="music-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18V5l11-2v13M9 8l11-2"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="17" cy="16" rx="3" ry="2"/></svg></span><div><h3>Keep your soundtrack.</h3><p>YouTube Music stays open.<br>The rabbit holes can wait.</p><a href="https://music.youtube.com/" target="_blank" rel="noopener noreferrer">Open YouTube Music <span aria-hidden="true">↗</span></a></div></section>
+          <section id="session-panel" class="session-panel" hidden><p id="session-expiry"></p><button id="lock-settings" class="button text-button" type="button">Lock settings now <span aria-hidden="true">↗</span></button></section>
+        </aside>
+      </div>
+    </main>
+    <footer class="page-footer"><span>Yumi Focus Hours · Stored on this device</span><span>Your PIN locks settings. Chrome’s owner can still disable or remove the extension.</span></footer>
+  </div>
+  <template id="rule-template">
+    <fieldset class="rule-card">
+      <legend class="sr-only">Focus schedule</legend>
+      <div class="rule-top"><label class="field rule-name"><span>Schedule name</span><input data-field="name" type="text" maxlength="80" required placeholder="Workday focus"></label><button class="icon-button remove-rule" type="button" aria-label="Remove schedule" title="Remove schedule">×</button></div>
+      <label class="check-row"><input data-field="enabled" type="checkbox"><span>Schedule enabled</span></label>
+      <label class="field"><span>Blocked websites <span class="optional-label">one domain per line</span></span><textarea data-field="domains" rows="3" required spellcheck="false" autocapitalize="none" placeholder="youtube.com"></textarea></label>
+      <fieldset class="day-field"><legend>Days of the week</legend><div class="day-picker"></div></fieldset>
+      <div class="time-row"><label class="field"><span>From</span><input data-field="start" type="time" required></label><span class="time-divider" aria-hidden="true">→</span><label class="field"><span>Until</span><input data-field="end" type="time" required></label></div>
+    </fieldset>
+  </template>
+</body>
+</html>
